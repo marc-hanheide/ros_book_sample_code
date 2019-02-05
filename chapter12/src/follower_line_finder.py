@@ -30,6 +30,7 @@ class Follower:
         mask[search_bot:h, 0:w] = 0
         M = cv2.moments(mask)
         if M['m00'] > 0:
+            # check https://docs.opencv.org/3.4/d8/d23/classcv_1_1Moments.html
             cx = int(M['m10']/M['m00'])
             cy = int(M['m01']/M['m00'])
             cv2.circle(image, (cx, cy), 20, (0, 0, 255), -1)

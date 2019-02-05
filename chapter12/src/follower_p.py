@@ -39,7 +39,7 @@ class Follower:
             err = cx - w/2
             self.twist.linear.x = 0.2
             self.twist.angular.z = -float(err) / 100
-            print M
+            print self.twist.angular.z
 
             self.cmd_vel_pub.publish(self.twist)
         cv2.imshow("window", image)
